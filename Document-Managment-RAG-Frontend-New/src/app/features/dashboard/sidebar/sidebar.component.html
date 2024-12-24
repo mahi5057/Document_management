@@ -1,0 +1,43 @@
+<div>
+    <p-sidebar #sidebarRef [(visible)]="sidebarVisible">
+        <ng-template pTemplate="headless">
+            <div class="d-flex flex-column h-full">
+                <div class="d-flex align-items-center justify-content-between flex-shrink-0">
+                    <span class="font-semibold fs-4 p-3">DocSense</span>
+                    <span>
+                        <p-button type="button" (onClick)="closeCallback($event)" icon="pi pi-times" rounded="true"
+                            outlined="true" class="sidebar-p-button"></p-button>
+                    </span>
+                </div>
+                <div class="mt-auto">
+                    <div class="petal-actions">
+                        <div class="list-group">
+                            <ng-container *ngFor="let button of sidebarConfig.buttons">
+                                <button *ngIf="isButtonVisible(button)" class="list-group-item list-group-item-action"
+                                    [routerLink]="[button.route]" [ngClass]="{'active': activeButton === button.key}"
+                                    (click)="setActive(button.key)" tabindex="0" role="button">
+                                    <i [class]="button.icon"></i> {{button.label}}
+                                </button>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-auto p-3 border-top bg-light">
+                <div class="list-group list-group-flush">
+                    <button class="list-group-item list-group-item-action" [routerLink]="['/login']" (click)="logout()"
+                        role="button">
+                        <i class="pi pi-sign-out mr-2"></i> LogOut
+                    </button>
+                </div>
+                <hr class="my-3" />
+                <a pRipple
+                    class="d-flex align-items-center cursor-pointer gap-3 text-dark hover:bg-light transition-duration-150 transition-colors p-ripple">
+                    <p-avatar image="assets/images/profile.png" shape="circle" />
+                    <span class="font-weight-bold">{{name}}</span>
+                </a>
+            </div>
+        </ng-template>
+    </p-sidebar>
+    <p-button (onClick)="sidebarVisible = true" icon="pi pi-bars"></p-button>
+</div>

@@ -1,0 +1,46 @@
+.chat-body {
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: #f0f0f0;
+}
+
+.message-sent {
+    background-color: #e1ffc7; 
+}
+
+.message-received {
+    background-color: #007bff; 
+    color: white;
+}
+
+.timestamp {
+    font-size: 0.75rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.text-muted {
+    color: #6c757d;
+}
+
+.text-white {
+    color: white;
+}
+
+.status-retrieving {
+    color: orange;
+}
+
+.status-success {
+    color: green;
+}
+
+.status-failed {
+    color: red;
+}
+
+.chat-header, .send-msg {
+    background: #5472d4;
+    color: white;
+}

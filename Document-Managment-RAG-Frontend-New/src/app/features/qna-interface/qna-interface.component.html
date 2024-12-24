@@ -1,0 +1,30 @@
+<div class="chat-container card shadow-sm" style="height: 400px;">
+    <div class="chat-header text-white p-3 d-flex justify-content-between align-items-center">
+        <h3 class="mb-0">Q&A</h3>
+        <span>{{ingestionStatus}}</span>
+    </div>
+    <div #chatBody class="chat-body p-3"
+        style="height: calc(100% - 120px); overflow-y: auto; background-color: #f0f0f0;">
+        <div *ngFor="let message of messages" class="d-flex mb-2">
+            <div [ngClass]="{
+                'message-sent ms-auto text-end': message.sent,
+                'message-received me-auto text-start': !message.sent
+            }" class="message rounded p-2 position-relative">
+                {{ message.text }}
+            </div>
+        </div>
+        <div *ngIf="isLoading" class="loading-indicator text-center my-3">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+    <div class="chat-footer d-flex align-items-center border-top">
+        <input type="text" class="form-control me-2" [(ngModel)]="newMessage" placeholder="Type a message"
+            (keydown.enter)="sendMessage()" [disabled]="isLoading" />
+        <button pButton type="button" icon="pi pi-send" class="send-msg btn" (click)="sendMessage()"
+            [disabled]="isLoading">
+            Send
+        </button>
+    </div>
+</div>

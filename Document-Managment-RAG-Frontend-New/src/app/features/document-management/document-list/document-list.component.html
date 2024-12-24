@@ -1,0 +1,9 @@
+@if(data.length) {
+    <app-custom-table [entityType]="entityType" (updateItem)="updateItem($event)" (deleteItemEvent)="deleteItem($event)"
+        (deleteMultipleItems)="deleteMultipleItems($event)" [data]="data" [config]="config"></app-custom-table>
+} 
+@else {
+    <div class="container mt-5">
+        <app-no-data></app-no-data>
+    </div>
+}

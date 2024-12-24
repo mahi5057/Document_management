@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header">
+            <h3>{{ config.title }}</h3>
+        </div>
+        <div class="card-body p-4">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div *ngFor="let field of config.fields" class="form-group mb-3">
+                    <label [for]="field.name" class="form-label">{{ field.label }}</label>
+                    <input [type]="field.type" [id]="field.name" class="form-control" [formControlName]="field.name"
+                        [required]="field.required" />
+                    <div *ngIf="form.get(field.name)?.touched && form.get(field.name)?.invalid">
+                        <small class="text-danger">{{ field.label }} is required.</small>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid">
+                    {{ formType === 'signup' ? 'Sign Up' : 'Sign In' }}
+                </button>
+            </form>
+            <p class="signup-redirect" *ngIf="formType === 'signup'" class="d-block text-center mt-3">
+                Have an account? <a routerLink="/login">Sign
+                    in.</a>.
+            </p>
+            <p class="signup-redirect" *ngIf="formType === 'login'" class="d-block text-center mt-3">
+                Not registered? <a routerLink="/signup">Sign up here</a>.
+            </p>
+        </div>
+    </div>
+</div>

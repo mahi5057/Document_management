@@ -1,0 +1,125 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/viva-light/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+html {
+    font-size: 14px;
+}
+
+body {
+    font-family: var(--font-family);
+    font-weight: normal;
+    background: var(--surface-ground);
+    color: var(--text-color);
+    padding: 1rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.card {
+    background: var(--surface-card);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.sidebar-p-button button {
+    border: none;
+}
+
+.custom-form .p-table {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.custom-form .p-table thead th {
+    background-color: #f4f4f4;
+    text-align: left;
+    font-weight: bold;
+}
+
+.custom-form .p-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.custom-form .p-button {
+    margin-right: 0.5rem;
+}
+
+.custom-form .p-dialog .p-fluid .field {
+    margin-bottom: 1rem;
+}
+
+.p-component .p-dropdown-items {
+    padding-left: 0px !important;
+}
+
+.chat-footer {
+    padding: 1rem;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.p-datatable td:last-child {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .custom-form .p-table {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        padding: 0px;
+    }
+
+    .p-fileupload-buttonbar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .p-fileupload-buttonbar .p-ripple {
+        margin: 6px 0px;
+        width: 100%;
+    }
+
+    .p-fileupload-buttonbar .p-element button {
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    .p-fileupload .p-fileupload-content {
+        padding: 0px;
+    }
+
+    .document-sidebar {
+        display: none;
+    }
+
+    .chat-footer {
+        padding: 1rem !important;
+    }
+
+    .chat-container,
+    .custom-form {
+        margin-top: 20px;
+    }
+
+    .p-paginator-current {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .p-datatable-footer {
+        display: flex;
+        justify-content: center;
+    }
+
+    .p-dialog-footer {
+        padding-top: 10px;
+    }
+}

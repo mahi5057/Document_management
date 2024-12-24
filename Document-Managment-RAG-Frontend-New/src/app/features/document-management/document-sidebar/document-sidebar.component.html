@@ -1,0 +1,12 @@
+<div class="sidebar">
+    <ul class="list-group">
+        @for(document of documents; track document) {
+            @if(document?.fileName?.length) {
+                <li class="list-group-item" [class.selected]="document === selectedDocument"
+                (click)="selectDocument(document)">
+                    {{ document.fileName }}
+                </li>
+            }
+        }
+    </ul>
+</div>
